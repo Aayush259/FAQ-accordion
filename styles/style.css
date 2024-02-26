@@ -74,22 +74,28 @@ header {
     padding-bottom: 0;
 }
 
-.question > div {
+.question > .questionContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     font-weight: 600;
-}
-
-.question > div:hover {
-    color: hsl(293deg 66.22% 50.27%);
+    gap: 10px;
     cursor: pointer;
     user-select: none;
 }
 
+.question > .questionContainer:active {
+    color: hsl(293deg 66.22% 50.27%);
+}
+
+.question > .questionContainer > img {
+    align-self: flex-start;
+}
+
 .answer {
     margin-top: 1.2rem;
+    color: var(--Grayish-purple);
 }
 
 .question .none-display {
@@ -99,9 +105,27 @@ header {
 .attribution {
     position: absolute;
     bottom: 0;
-    font-size: 11px; text-align: center;
+    font-size: 13px;
+    text-align: center;
+    color: #000001;
+    font-weight: 700;
 }
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+.attribution a:hover {
+    opacity: 0.8;
+}
+
+@media only screen and (max-width: 400px) {
+    #backgroundImage {
+        background-image: url("../assets/images/background-pattern-mobile.svg");
+        height: 30vh;
+    }
+
+    main {
+        width: 90%;
+    }
 }
